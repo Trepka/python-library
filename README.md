@@ -16,6 +16,36 @@ port=5433
 ### Database entity relationship model
 ![Database ER model](assets/images/erd.png)
 
+### Tables description
+
+1. Cupboards table includes information about all cupboards and shelfs
+    - shlef_id unique key for every cupboard and shelf combination
+    - cupboard_id cupboadr number
+    - shelf shelf number for single cumpoard
+2. Books table store information about every single book
+    - book_id unique integer key for our DB
+    - ISBN identifier for every book
+    - title 
+    - author
+    - publisher
+    - year when book was published
+    - jenre
+    - shelf_id is foreign key for cupboards.shelf_id key
+3. Readers table store all necessary information about every reader
+    - reader_id
+    - first_name
+    - second_name
+    - birth_date
+    - reg_date date whe reader register in library
+    - email is domain made data type "email"
+    - phone_number is domain made data type "phone_number"
+4. Orders table store all records when readers take book from library
+    - order_id 
+    - receive_date date when reader take book from library
+    - return_date date when reader must return book
+    - reader_id foreign key for readers.reader_id
+    - book_id is foreign key for books.books_id
+
 ### Join query for database
 
 Query returns reader name, phone number, book ID and title, cupboard and shelf for this book where return date between '2022-12-01' AND '2022-12-31'
